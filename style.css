@@ -51,9 +51,30 @@ body {
 
 }
 
+.removed {
+  border: none;
+  
+}
+
 .newBtnElement {
   display: inline-block;
   padding: 10px;
   border: none;
   /* display: inline-block; */
+}
+
+.body {
+  display: flex;
+  justify-content: center;
+   
+  height: 100vh;
+}
+
+
+.todo--btn__mark-to-complete {
+  border: 1px grey solid;
+  background-color: white;
+   
+
+   
 }
