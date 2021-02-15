@@ -14,15 +14,21 @@ todoInput.addEventListener("keydown", function (e) {
   let keycode = 13;
   if (e.keyCode == keycode && todoInput.value !== "") {
     createElement();
+     
   }
 });
 
 function createElement() {
+
+
+
   let inputValue = todoInput.value;
   let newBtnElement = document.createElement("button");
   let p = document.createElement("span");
   let div = document.createElement("div");
   let delbtn = document.createElement("button");
+
+  
 
   // console.log(childNodes + 1)
 
@@ -35,7 +41,7 @@ function createElement() {
   div.appendChild(newBtnElement);
   div.appendChild(p);
   div.appendChild(delbtn);
-
+  
   todoInput.value = "";
 
   delbtn.classList.add("newBtnElement");
@@ -51,6 +57,9 @@ function createElement() {
   clearAllBtn.addEventListener("click", function () {
     if (p.className === "completed") {
       p.parentElement.remove();
+
+      // counts elements when clear all is pressed
+      countOfElements() 
     }
   });
 
@@ -62,14 +71,17 @@ function createElement() {
   // removes parent div thus removing a the enitre todo
   delbtn.addEventListener("click", function (e) {
     this.parentElement.remove();
+    // counts elements after deletion
+    countOfElements() 
   });
 
-  let childNodes = todoTextContainer.childNodes.length;
-
-  for (let i = 0; i < childNodes; i++) {
-    if(childNodes < i) {
-      i--;
-   }
-    todoRemaining.innerText = i;
+  function countOfElements() {
+    let elementCount = todoTextContainer.childElementCount;
+    todoRemaining.innerText = `${elementCount} items left`;
   }
+   
+  // counts all elements globally
+  countOfElements();
+
+  
 }
