@@ -1,18 +1,14 @@
-const markAll = document.querySelector(".todo--btn");
-
 const todoTextContainer = document.querySelector(".todo--text-container");
-
-let todoInput = document.querySelector(".todo--input");
-
-const clearAllBtn = document.querySelector(".todo--btn__clear-all");
-
+const todoInput = document.querySelector(".todo--input");
 const todoRemaining = document.querySelector(".todo--remaining");
 
 //btns
-
+const markAll = document.querySelector(".todo--btn");
+const clearAllBtn = document.querySelector(".todo--btn__clear-all");
 const active = document.querySelector(".todo--btn__active");
 const all = document.querySelector(".todo--btn__all");
 const completed = document.querySelector(".todo--btn__completed");
+const btnTheme = document.querySelector(".todo--theme");
 // -------------------------------------------------------------------
 
 todoInput.addEventListener("keydown", function (e) {
@@ -23,21 +19,11 @@ todoInput.addEventListener("keydown", function (e) {
 });
 
 function createElement() {
-  let inputValue = todoInput.value;
-  let newBtnElement = document.createElement("button");
-  let p = document.createElement("span");
-  let div = document.createElement("div");
-  let delbtn = document.createElement("button");
-
-  //test
-
-  let arrOfRemovedElements = [];
-
-  function removedElements() {
-    arrOfRemovedElements.push(inputValue);
-
-    console.log(arrOfRemovedElements);
-  }
+  const inputValue = todoInput.value;
+  const newBtnElement = document.createElement("button");
+  const p = document.createElement("span");
+  const div = document.createElement("div");
+  const delbtn = document.createElement("button");
 
   todoTextContainer.appendChild(div);
   newBtnElement.innerText = "X";
@@ -55,13 +41,15 @@ function createElement() {
 
   newBtnElement.classList.add("newBtnElement");
 
-  // adds completed class to the p variable ( span element in html)
+  // adds completed class to the p variable ( span element in html )
+
   newBtnElement.addEventListener("click", function () {
     p.classList.toggle("completed");
     div.classList.toggle("done");
   });
 
   // clears all todos with compeleted if completetd css class is assigned
+
   clearAllBtn.addEventListener("click", function (e) {
     if (p.className === "completed") {
       p.parentElement.remove();
@@ -72,11 +60,13 @@ function createElement() {
   });
 
   // marks all todos as complete
+
   markAll.addEventListener("click", function () {
     p.classList.toggle("completed");
   });
 
   // removes parent div thus removing a the enitre todo
+
   delbtn.addEventListener("click", function (e) {
     this.parentElement.remove();
     // counts elements after deletion
@@ -88,14 +78,20 @@ function createElement() {
     todoRemaining.innerText = elementCount;
   }
 
-  // filter
+
+
+
+  // ----- filter
 
   // shows all todos
   all.addEventListener("click", function () {
-    if (div.style.display === "none") div.style.display = "block";
+    if (div.style.display === "none") {
+      div.style.display = "flex";
+    } 
   });
 
   // shows only the active todos which are not marked
+
   active.addEventListener("click", function () {
     if (p.className === "completed") {
       div.style.display = "none";
@@ -110,8 +106,12 @@ function createElement() {
     }
   });
 
-  removedElements();
 
-  // counts all elements globally
+  // Theme switcher
+
+
+
+  // counts all elements globally.
+
   countOfElements();
 }

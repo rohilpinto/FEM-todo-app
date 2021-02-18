@@ -1,5 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap');
-
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap");
 
 * {
   /* padding: 0;
@@ -13,7 +12,7 @@
 
   --primary-clr: hsl(220, 98%, 61%);
 
-	/* ----------------------- */
+  /* ----------------------- */
 
   /* Light Theme */
 
@@ -36,30 +35,41 @@
   /* Dark-theme (hover) */
   --Light--Grayish-Blue: hsl(236, 33%, 92%);
 
-
-	/* ----------------------- */
+  /* ----------------------- */
 }
 
 body {
   font-size: 18px;
-	font-family: 'Josefin Sans', sans-serif;
+  font-family: "Josefin Sans", sans-serif;
 }
-
 
 .completed {
-  text-decoration: line-through;
 
+ 
+     
 }
 
+.completed::after {
+  content: '';
+ 
+  width: 100%;
+  height: 100%;
+  background: rgb(204, 184, 184);
+  position: absolute;
+  top: 0;
+  left: 0;
+  /* z-index: -1; */
+  display: flex;
+  justify-content: center;
+   
+}
+
+ 
 .removed {
   border: none;
-  
 }
 
 .done {
-  
-  
-
 }
 
 .newBtnElement {
@@ -72,15 +82,43 @@ body {
 .body {
   display: flex;
   justify-content: center;
-   
+
   height: 100vh;
 }
-
 
 .todo--btn__mark-to-complete {
   border: 1px grey solid;
   background-color: white;
-   
+}
 
-   
+span {
+  color: var(--Very--Dark-Grayish-Blue);
+}
+
+.todo--input-container {
+  width: 545px;
+  background:var(--Very--Dark-Blue);
+  margin-bottom: 30px;
+  height: 60px;
+}
+
+
+.todo--text-container {
+  display: flex;
+  flex-direction: column;
+  width: 545px;
+ 
+
+  /* background:var(--Very--Dark-Blue); */
+}
+
+.todo--text-container div {
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  margin-bottom: 2px;
+  height: 60px;
+  background:var(--Very--Dark-Blue);
 }
