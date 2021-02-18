@@ -1,39 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Document</title>
-	<link rel="stylesheet" href="style.css">
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="body">
+      <div class="todo">
+        <button class="todo--btn todo--btn__mark-to-complete">x</button>
+        <input type="text" class="todo--input" />
 
-	<div class="body">
-
-
-		<div class="todo">
-			<button class="todo--btn  todo--btn__mark-to-complete">x</button>
-			<input type="text" class="todo--input">
-			
-			<div class="todo--text-container">
-				<!-- js elements inserted here -->
-			 
-			</div>
-		
-		</div>
-		
-
-		<div class="todo--number-of-todos">
-			<span class="todo--remaining"></span>
-		</div>
-
-		<button class="todo--btn todo--btn__clear-all">
-			clear
-		</button>
-	</div>
-	
-
-	<script src="script.js"></script>
-</body>
+        <div class="todo--text-container">
+          <!-- js elements inserted here -->
+        </div>
+      </div>
+      <div class="todo--btn--container">
+        <span class="todo--count-container">
+          <span class="todo--remaining"></span>
+          <span>items left</span>
+        </span>
+  
+        <button class="todo--btn todo--btn__all">All</button>
+        <button class="todo--btn todo--btn__active">Active</button>
+        <button class="todo--btn todo--btn__completed">Completed</button>
+        <button class="todo--btn todo--btn__clear-all">Clear Completed</button>
+      </div>
+    </div>
+    
+    <script src="script.js"></script>
+  </body>
 </html>
