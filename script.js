@@ -20,39 +20,42 @@ todoInput.addEventListener("keydown", function (e) {
 
 function createElement() {
   const inputValue = todoInput.value;
-  const newBtnElement = document.createElement("button");
-  const p = document.createElement("span");
+  const marked = document.createElement("button");
+  const span = document.createElement("span");
   const div = document.createElement("div");
   const delbtn = document.createElement("button");
 
   todoTextContainer.appendChild(div);
-  newBtnElement.innerText = "X";
-  todoTextContainer.appendChild(p);
-  p.innerText = inputValue;
+  marked.innerText = " ";
+  todoTextContainer.appendChild(span);
+  span.innerText = inputValue;
   delbtn.innerText = "X";
 
-  div.appendChild(newBtnElement);
-  div.appendChild(p);
+  div.appendChild(marked);
+  div.appendChild(span);
   div.appendChild(delbtn);
 
   todoInput.value = "";
 
   delbtn.classList.add("newBtnElement");
 
-  newBtnElement.classList.add("newBtnElement");
+  marked.classList.add("newBtnElement");
 
   // adds completed class to the p variable ( span element in html )
 
-  newBtnElement.addEventListener("click", function () {
-    p.classList.toggle("completed");
+  marked.addEventListener("click", function () {
+    span.classList.toggle("completed");
     div.classList.toggle("done");
+    // btn check thing 
+    marked.classList.toggle('todo--marked')
+  
   });
 
   // clears all todos with compeleted if completetd css class is assigned
 
   clearAllBtn.addEventListener("click", function (e) {
-    if (p.className === "completed") {
-      p.parentElement.remove();
+    if (span.className === "completed") {
+      span.parentElement.remove();
 
       // counts elements when clear all is pressed
       countOfElements();
@@ -62,7 +65,7 @@ function createElement() {
   // marks all todos as complete
 
   markAll.addEventListener("click", function () {
-    p.classList.toggle("completed");
+    span.classList.toggle("completed");
   });
 
   // removes parent div thus removing a the enitre todo
@@ -93,7 +96,7 @@ function createElement() {
   // shows only the active todos which are not marked
 
   active.addEventListener("click", function () {
-    if (p.className === "completed") {
+    if (span.className === "completed") {
       div.style.display = "none";
     }
   });
