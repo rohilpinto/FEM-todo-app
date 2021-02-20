@@ -46,23 +46,10 @@ body {
 .completed {
 
  
-     
+     text-decoration: line-through;
 }
 
-.completed::after {
-  content: '';
  
-  width: 100%;
-  height: 100%;
-  background: rgb(204, 184, 184);
-  position: absolute;
-  top: 0;
-  left: 0;
-  /* z-index: -1; */
-  display: flex;
-  justify-content: center;
-   
-}
 
  
 .removed {
@@ -102,23 +89,3 @@ span {
   height: 60px;
 }
 
-
-.todo--text-container {
-  display: flex;
-  flex-direction: column;
-  width: 545px;
- 
-
-  /* background:var(--Very--Dark-Blue); */
-}
-
-.todo--text-container div {
-  padding: 20px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  position: relative;
-  margin-bottom: 2px;
-  height: 60px;
-  background:var(--Very--Dark-Blue);
-}
