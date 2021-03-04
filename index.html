@@ -4,41 +4,24 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
     <link rel="stylesheet" href="style.css" />
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap" rel="stylesheet" />
+    <script src="script.js" defer></script>
+    <body class="light">
+      <main>
+        <header>
+          <h1>Todo</h1>
+          <button id="toggle-theme">Dark</button>
+        </header>
+
+        <section class="todo--wrapper">
+          <div class="todo--btn-wrapper"><button>Check all todos</button></div>
+
+          <input type="input" id="todo-input" />
+        </section>
+      </main>
+    </body>
   </head>
-  <body>
-    <div class="body">
-      <div class="todo">
-        <div class="todo--heading-container">
-          <div class="todo--title">TODO</div>
-          <button class="todo--btn todo--theme">Light</button>
-        </div>
-
-        
-        <div class="todo--input-container">
-          <button class="todo--btn todo--btn__mark-to-complete">x</button>
-          <input type="text" class="todo--input" />
-        </div>
-
-        <div class="todo--text-container">
-          <!-- js elements inserted here -->
-        </div>
-      </div>
-
-      <div class="todo--btn--container">
-        <span class="todo--count-container">
-          <span class="todo--remaining"></span>
-          <span>items left</span>
-        </span>
-
-        <button class="todo--btn todo--btn__all">All</button>
-        <button class="todo--btn todo--btn__active">Active</button>
-        <button class="todo--btn todo--btn__completed">Completed</button>
-        <button class="todo--btn todo--btn__clear-all">Clear Completed</button>
-      </div>
-    </div>
-
-    <script src="script.js"></script>
-  </body>
 </html>
