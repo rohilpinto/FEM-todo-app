@@ -52,6 +52,7 @@ body {
 
 main {
   height: 100%;
+  margin-top: 90px;
   
 }
 
@@ -79,25 +80,65 @@ main header button {
   
 }
 
-.todo--wrapper button {
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
 
-}
-
-.todo--btn-wrapper {
-  width: 50px;
-  height: 50px;
-  display: inline-block;
+.todo--checkbox-wrapper {
+  width: 100px;
+  height: 100px;
+  
   position: absolute;
 }
 
+.todo--checkbox-wrapper input {
+  width: 30px;
+  height: 30px;
+  border: 1px solid red;
+  appearance: none;
+  position: relative;
+}
 
-.todo--wrapper input {
-  width: 95%;
-  height: 100%;
-  border: none;
+.todo--checkbox-wrapper input:checked {
+  color: black;
+  border-image-source: linear-gradient(hsl(192, 100%, 67%) to hsl(280, 87%, 65%));
+  border-width: 5pt;
+  border-image-slice: 1;
+}
+
+.todo--checkbox-wrapper input:checked:before {
+  content: "";
+  height: 7px;
+  width: 3px;
+  
+  bottom: 11px;
+  position: absolute;
+  background: white;
+  margin-left: 5px;
+  transform: rotate(-35deg) translate(0px,2px) ;
+  
   
 }
 
+
+.todo--checkbox-wrapper input:checked:after {
+  content: "";
+  height: 20px;
+  width: 3px;
+  background: white;
+  position: absolute;
+  left: 15px;
+  bottom: 5px;
+  transform: rotate(59deg);
+}
+
+
+
+.todo--wrapper #todo-input {
+  width: 100%;
+  height: 100%;
+  border: none;
+  padding-left: 70px;
+}
+
+
+
+ 
+ 

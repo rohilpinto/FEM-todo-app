@@ -9,7 +9,7 @@ const body = document.body;
  
 
 toggleBtn.onclick = () => {
- 
+
 if(body.className.includes('light')) {
 	body.classList.remove('light')
 	body.classList.add('dark')
