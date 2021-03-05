@@ -13,7 +13,7 @@
   --Very-Dark-Grayish-Blue: hsl(235, 19%, 35%);
 
   --Light-theme-img: url("imgs/bg-desktop-light.jpg");
-
+  --moon-theme-icon: url('imgs/icon-moon.svg');
   /* dark theme */
 
   --Very-Dark-Blue: hsl(235, 21%, 11%);
@@ -25,6 +25,11 @@
   --Very-Dark-Grayish-Blue: hsl(237, 14%, 26%);
 
   --Dark-theme-img: url("imgs/bg-desktop-dark.jpg");
+  --sun-theme-icon: url('imgs/icon-sun.svg')
+}
+
+html {
+  font-size: 62.5%;
 }
 
 body {
@@ -34,7 +39,7 @@ body {
   background-image: var(--bg-img);
   background-position: top center;
   background-size: 1440px 300px;
-  font-size: 16px;
+  font-size: 1.6rem;
   background-repeat: no-repeat;
 }
 
@@ -42,22 +47,22 @@ body {
   --bg: var(--Very-Light-Gray);
   --text: var(--Very-Dark-Grayish-Blue);
   --bg-img: var(--Light-theme-img);
+  --theme-icon: var(--moon-theme-icon);
 }
 
 .dark {
   --bg: var(--Very-Dark-Blue);
   --text: var(--Light-Grayish-Blue);
   --bg-img: var(--Dark-theme-img);
+  --theme-icon: var(--sun-theme-icon);
 }
 
 main {
   height: 100%;
   margin-top: 90px;
-  
 }
 
 main header {
-  
   width: 700px;
   height: 50px;
   border: 1px solid #000;
@@ -70,6 +75,9 @@ main header button {
   width: 50px;
   height: 50px;
   border-radius: 50%;
+  background-image: var(--theme-icon);
+  background-position: center center;
+  background-repeat: no-repeat;
 }
 
 .todo--wrapper {
@@ -77,14 +85,12 @@ main header button {
   margin: 70px auto 0 auto;
   background-color: var(--Very-Light-Gray);
   height: 50px;
-  
 }
-
 
 .todo--checkbox-wrapper {
   width: 100px;
   height: 100px;
-  
+
   position: absolute;
 }
 
@@ -92,44 +98,9 @@ main header button {
   width: 30px;
   height: 30px;
   border: 1px solid red;
-  appearance: none;
+  
   position: relative;
 }
-
-.todo--checkbox-wrapper input:checked {
-  color: black;
-  border-image-source: linear-gradient(hsl(192, 100%, 67%) to hsl(280, 87%, 65%));
-  border-width: 5pt;
-  border-image-slice: 1;
-}
-
-.todo--checkbox-wrapper input:checked:before {
-  content: "";
-  height: 7px;
-  width: 3px;
-  
-  bottom: 11px;
-  position: absolute;
-  background: white;
-  margin-left: 5px;
-  transform: rotate(-35deg) translate(0px,2px) ;
-  
-  
-}
-
-
-.todo--checkbox-wrapper input:checked:after {
-  content: "";
-  height: 20px;
-  width: 3px;
-  background: white;
-  position: absolute;
-  left: 15px;
-  bottom: 5px;
-  transform: rotate(59deg);
-}
-
-
 
 .todo--wrapper #todo-input {
   width: 100%;
@@ -137,8 +108,3 @@ main header button {
   border: none;
   padding-left: 70px;
 }
-
-
-
- 
- 
