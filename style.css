@@ -47,29 +47,37 @@ html {
 }
 
 body {
+  width: 1440px;
+  margin: auto;
   color: var(--text);
-  background: var(--bg);
-  height: 100vh;
-  background-image: var(--bg-img);
-  background-position: top center;
-  background-size: 1440px 300px;
+  background-color: lightslategrey;
   font-size: 1.6rem;
-  background-repeat: no-repeat;
+  outline: 1px solid var(--text);
+  height: 100vh;
+  
   font-family: "Josefin Sans", sans-serif;
+  transition: background 300ms ease-in-out, color 1000ms ease-in-out;
 }
 
 main {
+  background-color: var(--bg);
+  background-image: var(--bg-img);
+  background-position: top center;
+  background-size: 1440px 300px;
+  background-repeat: no-repeat;
   height: 100%;
-  margin-top: 90px;
+  
 }
 
 main header {
-  width: 700px;
-  height: 60px;
-   
+  width: 500px;
+  height: 100px;
+
   display: flex;
   justify-content: space-between;
   margin: auto;
+  
+  padding-top: 100px;
   align-items: center;
 }
 
@@ -82,19 +90,22 @@ main header h1 {
 }
 
 main header button {
-  width: 50px;
+  width: 35px;
   height: 50px;
   border-radius: 50%;
   background-image: var(--theme-icon);
   background-position: center center;
   background-repeat: no-repeat;
+  border: none;
+  background-color: transparent;
 }
 
 .todo--wrapper {
-  width: 700px;
+  width: 500px;
   margin: 70px auto 0 auto;
   background-color: var(--Very-Light-Gray);
   height: 50px;
+  border-radius: 30%;
 }
 
 .todo--checkbox-wrapper {
