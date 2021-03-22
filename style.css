@@ -150,5 +150,8 @@ main header button {
 .todo--btn-closed {
   border: none;
   width: 50px;
-
+  height: 50px;
+  background-image: url(./imgs/icon-cross.svg);
+  background-repeat: no-repeat;
+  background-position: center center;
 }

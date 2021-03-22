@@ -3,6 +3,7 @@ const lightBtn = document.getElementById("light-button");
 const toggleBtn = document.getElementById("toggle-theme");
 const todoInput = document.querySelector(".todo-input");
 const todoItemParent = document.querySelector(".todo--item-parent");
+const completedBtn = document.querySelector('.todo--btn-closed')
 // events
 
 toggleBtn.onclick = () => {
@@ -20,15 +21,12 @@ toggleBtn.onclick = () => {
 
 // Todo-input
 
-
 todoInput.addEventListener("keydown", createTodo);
 
 function createTodo(e) {
-  
-	if(e.keyCode === 13) {
-		createElements();
-	}
- 
+  if (e.keyCode === 13 && todoInput.value !== '') {
+    createElements();
+  }
 }
 
 function createElements() {
@@ -40,12 +38,13 @@ function createElements() {
   // created span todo-item
   let todoSpan = document.createElement("span");
   todoSpan.classList.add("todo--todo-item");
+  todoSpan.innerText = todoInput.value;
 
   // created completed button
 
   let completedBtn = document.createElement("button");
   completedBtn.classList.add("todo--btn", "todo--btn-closed");
-  completedBtn.innerText = "X";
+  // completedBtn.innerText = "X";
 
   // created todo list wrapper
 
@@ -60,5 +59,26 @@ function createElements() {
 
   todoItemParent.appendChild(todoListWrapper);
 
-  todoSpan.innerText = todoInput.value;
+
+	todoInput.value = '';
+
+ 
+
+}
+
+ 
+
+
+todoItemParent.addEventListener('click', removeParent)
+
+
+function removeParent(e) {
+	console.log(e);
+
+	if (e.target.className === 'todo--btn todo--btn-closed') {
+			e.target.parentElement.remove();
+			console.log(e.target.parentElement);
+	} else {
+		console.log('no');
+	}
 }
