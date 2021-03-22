@@ -18,10 +18,19 @@
 
         <section class="todo--wrapper">
           <div class="todo--checkbox-wrapper">
-            <input type="checkbox" id="select-all-checkbox"/>
+            <input type="checkbox" class="todo--checkbox" />
+            <span class="todo--checkmark"></span>
           </div>
 
-          <input type="input" id="todo-input" placeholder="Enter your todo"/>
+          <input type="input" class="todo-input" placeholder="Enter your todo" />
+
+          <div class="todo--item-parent">
+            <div class="todos--todo-list">
+              <input type="checkbox" class="todo--checkbox" />
+              <span class="todo--todo-item">Lorem ipsum, dolor sit amet consectetur a .</span>
+              <button class="todo--btn todo--btn-closed">X</button>
+            </div>
+          </div>
         </section>
       </main>
     </body>
