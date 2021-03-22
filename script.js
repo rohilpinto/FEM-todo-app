@@ -78,7 +78,5 @@ function removeParent(e) {
 	if (e.target.className === 'todo--btn todo--btn-closed') {
 			e.target.parentElement.remove();
 			console.log(e.target.parentElement);
-	} else {
-		console.log('no');
-	}
+	}  
 }

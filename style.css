@@ -6,8 +6,10 @@
 
 :root {
   /* light */
-  --Very-Light-Gray: hsl(0, 0%, 98%);
+  --Very-Light-Gray: #fafafa;
+  --All-White: #ffffff;
   --Very-Light-Grayish-Blue: hsl(236, 33%, 92%);
+  
   --Light-Grayish-Blue: hsl(233, 11%, 84%);
   --Dark-Grayish-Blue: hsl(236, 9%, 61%);
   --Very-Dark-Grayish-Blue: hsl(235, 19%, 35%);
@@ -16,13 +18,14 @@
   --moon-theme-icon: url("imgs/icon-moon.svg");
   /* dark theme */
 
-  --Very-Dark-Blue: hsl(235, 21%, 11%);
+  --Very-Dark-Blue: #181824;
   --Very-Dark-Desaturated-Blue: hsl(235, 24%, 19%);
   --Light-Grayish-Blue: hsl(234, 39%, 85%);
   --Light-Grayish-Blue--hover-: hsl(236, 33%, 92%);
   --Dark-Grayish-Blue: hsl(234, 11%, 52%);
   --Very-Dark-Grayish-Blue: hsl(233, 14%, 35%);
   --Very-Dark-Grayish-Blue: hsl(237, 14%, 26%);
+  --All-dark: #25273c;
 
   --Dark-theme-img: url("imgs/bg-desktop-dark.jpg");
   --sun-theme-icon: url("imgs/icon-sun.svg");
@@ -33,13 +36,16 @@
   --text: var(--Very-Dark-Grayish-Blue);
   --bg-img: var(--Light-theme-img);
   --theme-icon: var(--moon-theme-icon);
+  --Todo-item-background: var(--All-White); 
 }
 
 .dark {
   --bg: var(--Very-Dark-Blue);
   --text: var(--Light-Grayish-Blue);
+
   --bg-img: var(--Dark-theme-img);
   --theme-icon: var(--sun-theme-icon);
+  --Todo-item-background: var(--All-dark); 
 }
 
 html {
@@ -102,7 +108,7 @@ main header button {
 .todo--wrapper {
   width: 500px;
   margin: 70px auto 0 auto;
-  background-color: var(--Very-Light-Gray);
+  background-color: var(--Todo-item-background);
   height: 50px;
   border-radius: 30%;
 }
@@ -128,22 +134,25 @@ main header button {
   height: 100%;
   border: none;
   padding-left: 70px;
+  background-color: var(--Todo-item-background);
 }
 
 .todos--todo-list {
-  background-color: var(--Very-Light-Gray);
+  background-color: var(--Todo-item-background);
   height: 50px;
   display: flex;
   justify-content: space-between;
   margin: 2px 0;
   align-items: center;
+  max-width: 500px;
 }
 
 
 .todo--todo-item {
   /* background-color: rgb(131, 107, 107); */
-
-  
+  max-width: 400px;
+ overflow:auto;
+ 
 }
 
 
