@@ -36,6 +36,25 @@ function createElements() {
   todoCheckbox.classList.add("todo--list-checkbox");
   todoCheckbox.type = "checkbox";
 
+
+
+  todoCheckbox.addEventListener('click', function (e) {
+    console.log(e.target);
+    
+ 
+    if(todoCheckbox ===  checked) {
+      todoCheckbox.classList.remove('todo--checkbox')
+      todoCheckbox.classList.add('todo--uncheckbox');
+    }
+  })
+  
+
+
+
+
+
+
+
   // created span todo-item
   let todoSpan = document.createElement("span");
   todoSpan.classList.add("todo--todo-item");
