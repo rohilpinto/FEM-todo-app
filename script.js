@@ -42,7 +42,7 @@ function createElements() {
     console.log(e.target);
     
  
-    if(todoCheckbox ===  checked) {
+    if(todoCheckbox ===  this.checked) {
       todoCheckbox.classList.remove('todo--checkbox')
       todoCheckbox.classList.add('todo--uncheckbox');
     }

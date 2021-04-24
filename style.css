@@ -129,10 +129,11 @@ main header button {
   appearance: none;
   /* content: url(./imgs/icon-check.svg); */
   /* background-image: url(./imgs/icon-check.svg), linear-gradient(150deg, hsl(192, 100%, 67%), hsl(280, 87%, 65%)); */
-  background-repeat: no-repeat;
-  background-position: center center;
-  border-image: url(./imgs/bg-desktop-light.jpg);
-  
+   
+  border: 4px solid transparent;
+  border-image: linear-gradient(150deg, hsl(192, 100%, 67%), hsl(280, 87%, 65%));
+  border-image-slice: 1;  
+
   border-radius: 50px;
 
   /* not done */
