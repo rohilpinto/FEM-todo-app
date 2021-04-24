@@ -9,7 +9,7 @@
   --Very-Light-Gray: #fafafa;
   --All-White: #ffffff;
   --Very-Light-Grayish-Blue: hsl(236, 33%, 92%);
-  
+
   --Light-Grayish-Blue: hsl(233, 11%, 84%);
   --Dark-Grayish-Blue: hsl(236, 9%, 61%);
   --Very-Dark-Grayish-Blue: hsl(235, 19%, 35%);
@@ -36,7 +36,7 @@
   --text: var(--Very-Dark-Grayish-Blue);
   --bg-img: var(--Light-theme-img);
   --theme-icon: var(--moon-theme-icon);
-  --Todo-item-background: var(--All-White); 
+  --Todo-item-background: var(--All-White);
 }
 
 .dark {
@@ -45,7 +45,7 @@
 
   --bg-img: var(--Dark-theme-img);
   --theme-icon: var(--sun-theme-icon);
-  --Todo-item-background: var(--All-dark); 
+  --Todo-item-background: var(--All-dark);
 }
 
 html {
@@ -53,7 +53,7 @@ html {
 }
 
 body {
-  width: 1440px;
+  /* width: 1440px; */
   margin: auto;
   color: var(--text);
 
@@ -111,19 +111,28 @@ main header button {
   background-color: var(--Todo-item-background);
   height: 50px;
   border-radius: 30%;
+  position: relative;
 }
 
 .todo--checkbox-wrapper {
   width: 50px;
   height: 50px;
   position: absolute;
-  top: 0;
-  left: 0;
 }
 
 .todo--checkbox {
   width: 20px;
   height: 20px;
+}
+
+.todo--input-checkbox {
+  margin-top: 15px;
+  margin-left: 20px;
+}
+
+.todo--list-checkbox {
+  margin-top: 2px;
+  margin-left: 20px;
 }
 
 .todo--checkmark {
@@ -147,14 +156,11 @@ main header button {
   max-width: 500px;
 }
 
-
 .todo--todo-item {
   /* background-color: rgb(131, 107, 107); */
   max-width: 400px;
- overflow:auto;
- 
+  overflow: auto;
 }
-
 
 .todo--btn-closed {
   border: none;

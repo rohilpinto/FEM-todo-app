@@ -33,6 +33,7 @@ function createElements() {
   // created checkbox
   let todoCheckbox = document.createElement("input");
   todoCheckbox.classList.add("todo--checkbox");
+  todoCheckbox.classList.add("todo--list-checkbox");
   todoCheckbox.type = "checkbox";
 
   // created span todo-item
