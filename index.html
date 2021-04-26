@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
     <title>Document</title>
-    <link rel="preconnect" href="https://fonts.gstatic.com" />
+
     <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap" rel="stylesheet" />
     <script src="script.js" defer></script>
     <body class="light">
@@ -16,26 +16,33 @@
           <button id="toggle-theme"></button>
         </header>
 
-        <section class="todo--wrapper">
-          <div class="todo--checkbox-wrapper">
-            <input type="checkbox" class="todo--checkbox todo--input-checkbox  " />
-             
-            <span class="todo--checkmark"></span>
-          </div>
-
-          <input type="input" class="todo-input" placeholder="Enter your todo" />
-
-          <div class="todo--item-parent">
-            <div class="todos--todo-list">
-              <input type="checkbox" class="todo--checkbox todo--list-checkbox" />
-              <span class="todo--todo-item">Lorem ipsum, dolor sit amet consectetur a .</span>
-              <button class="todo--btn todo--btn-closed"></button>
+        <div class="enter-todo--container">
+          <div class="enter-todo">
+            <div class="checkbox-container">
+              <input type="checkbox" class="todo-input-checkbox" />
+            </div>
+            <div class="text-container">
+              <input type="text" class="todo-input-text" />
             </div>
           </div>
-        </section>
-      </main>
+        </div>
 
-      <script src="https://code.iconify.design/1/1.0.6/iconify.min.js"></script>
+        <div class="todo-options-container">
+          <div class="todo-options">
+            <div class="items-left">
+              <span><span class="item-number">0</span> item left</span>
+            </div>
+            <div class="buttons">
+              <button class="btn btn-all">All</button>
+              <button class="btn btn-active">Active</button>
+              <button class="btn btn-complete">Complete</button>
+            </div>
+            <div class="clear">
+              <button class="clear-completed">Clear Completed</button>
+            </div>
+          </div>
+        </div>
+      </main>
     </body>
   </head>
 </html>
