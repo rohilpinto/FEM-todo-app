@@ -59,15 +59,15 @@ body {
   color: var(--text);
 
   font-size: 1.6rem;
-  outline: 1px solid var(--text);
-  height: 100%;
+   
+   
 
   font-family: "Josefin Sans", sans-serif;
   transition: background 300ms ease-in-out, color 1000ms ease-in-out;
 }
 
 main {
-  background-color: var(--bg);
+  /* background-color: var(--bg); */
   background-image: var(--bg-img);
   background-position: top center;
   background-size: contain;
@@ -151,16 +151,7 @@ main header button {
   background: linear-gradient(hsl(192, 100%, 67%), hsl(280, 87%, 65%));
 } */
 
-.enter-todo .checkbox-container::after {
-  content: "";
 
-  position: absolute;
-  display: block;
-  background: var(--bg);
-  width: calc(100% - 2px);
-  height: calc(100% - 2px);
-  border-radius: 20px;
-}
 
 .enter-todo .checkbox-container .todo-input-checkbox {
   opacity: 0;

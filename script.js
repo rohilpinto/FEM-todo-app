@@ -4,7 +4,35 @@ const toggleBtn = document.getElementById("toggle-theme");
 
 const check = document.querySelector(".todo-input-checkbox");
 const todoContainer = document.querySelector(".checkbox-container");
+
+const todoinput = document.querySelector(".todo-input");
+
+// todo item elements
+const todoItemContainer = document.querySelector(".todo-item-container");
+const todoCheck = document.querySelectorAll(".todo-check");
+todoCheck.forEach((i) => {
+  console.log(i);
+})
 // events
+
+
+window.addEventListener("click", function (e) {
+  console.log(e);
+
+  let inputTarget = e.target;
+  let todoItemCheckInput = document.querySelectorAll(".todo-item-check");
+
+  todoItemCheckInput.forEach((element, index) => {
+    if (inputTarget.className === "todo-item-check") {
+      if (todoItemCheckInput[index].checked) {
+        
+        todoCheck.classList.add("todo-check-background");
+      }
+    }
+  });
+});
+
+
 
 toggleBtn.onclick = () => {
   if (body.className.includes("light")) {
@@ -19,24 +47,32 @@ toggleBtn.onclick = () => {
   }
 };
 
-// Todo-input
+//
 
-const todoinput = document.querySelector(".todo-input");
-const todoItemContainer = document.querySelector(".todo-item-container");
+window.addEventListener("click", function (e) {
+  console.log();
+  let checkboxBtn = document.querySelector(".todo-input-checkbox");
 
- 
-
-
-
-todoinput.addEventListener("keydown", (e) => {
-  if (e.key === "Enter") {
-    createElement();
+  if (e.target === checkboxBtn) {
+    if (checkboxBtn.checked) {
+      todoContainer.classList.add("todo-check-background");
+    } else {
+      todoContainer.classList.remove("todo-check-background");
+    }
   }
 });
 
-function createElement() {
+// Todo-input
 
+todoinput.addEventListener("keydown", (e) => {
+  if (e.key === "Enter" && todoinput.value !== "") {
+    createElement();
+    
+  }
   
+});
+
+function createElement() {
   let todoItem = document.createElement("div");
   todoItem.classList.add("todo-item");
 
@@ -55,8 +91,6 @@ function createElement() {
   let todo = document.createElement("span");
   todo.classList.add("todo");
 
- 
-
   todoListItem.append(todo);
 
   let removeTodo = document.createElement("div");
@@ -66,39 +100,23 @@ function createElement() {
   removeBtn.classList.add("remove");
 
   let btnCrossImg = document.createElement("img");
-  btnCrossImg.src = "./imgs/icon-cross.svg"
+  btnCrossImg.src = "./imgs/icon-cross.svg";
 
   removeBtn.append(btnCrossImg);
   removeTodo.append(removeBtn);
 
   todoItem.append(todoCheck, todoListItem, removeTodo);
-   
-  console.log(todoItem);
 
   todo.innerText = todoinput.value;
   todoinput.value = "";
-  todoItemContainer.append(todoItem)
+  todoItemContainer.append(todoItem);
+
   
-  console.log(todoContainer);
+  
 }
 
-window.addEventListener("click", function (e) {
-  input = e.target;
 
-  let newStyleElem = document.head.appendChild(document.createElement("style"));
+ 
 
-  if (input.className === "todo-input-checkbox") {
-    if (input.checked) {
-      todoContainer.classList.add("todo-check-background");
-      todoContainer.classList.add("checked");
-      // adds the full gradient background when checked
 
-      newStyleElem.innerText = ".enter-todo .checkbox-container::after { visibility: hidden } ";
-      console.log("checked");
-      // this removes the white dot on the checkbox
-    } else {
-      todoContainer.classList.remove("todo-check-background");
-      console.log("unchcked");
-    }
-  }
-});
+
